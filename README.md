@@ -35,10 +35,16 @@ $ docker run --name postgrest-service \
              -d postgrest
 ```
 
-Sample Docker Compose File :
+You can the visit the following URL in a browser on your host machine to get started:
+
+```
+http://127.0.0.1:3000/<database_table>
+```
+
+I want to run this with docker-compose, so I create the following file:
 
 ```yml
-app:
+web:
   image: suzel/docker-php
   ports:
     - "80:80"
@@ -62,10 +68,4 @@ postgres:
     POSTGRES_DB: app_db
     POSTGRES_USER: app_user
     POSTGRES_PASSWORD: password
-```
-
-You can the visit the following URL in a browser on your host machine to get started:
-
-```
-http://127.0.0.1:3000/<database_table>
 ```
