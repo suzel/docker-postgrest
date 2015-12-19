@@ -51,7 +51,7 @@ web:
   links:
     - postgrest:postgrest
   volumes:
-    - .:/usr/share/nginx/html
+    - .:/var/www/html/
 
 postgrest:
   image: suzel/docker-postgrest
