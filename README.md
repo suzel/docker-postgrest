@@ -26,7 +26,7 @@ Start your image binding external port 3000 in all interfaces to your container:
 ```sh
 $ docker run --name postgrest-service \
              -p 3000:3000 \
-             -e POSTGREST_VERSION=0.2.12.1 \
+             -e POSTGREST_VERSION=0.3.0.2 \
              -e POSTGREST_DBHOST=localhost \
              -e POSTGREST_DBPORT=5432 \
              -e POSTGREST_DBNAME=database1 \
@@ -45,7 +45,7 @@ I want to run this with docker-compose, so I create the following file:
 
 ```yml
 web:
-  image: suzel/docker-php
+  image: suzel/docker-apache-php
   ports:
     - "80:80"
   links:
@@ -58,7 +58,7 @@ postgrest:
   ports:
     - "3000:3000"
   environment:
-    POSTGREST_VERSION: 0.2.12.1
+    POSTGREST_VERSION: 0.3.0.2
     POSTGREST_DBHOST: postgres
     POSTGREST_DBPORT: 5432
     POSTGREST_DBNAME: app_db
