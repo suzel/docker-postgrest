@@ -1,5 +1,7 @@
 # Docker PostgREST
 
+[![Go to Docker Hub](https://img.shields.io/badge/Docker%20Hub-%E2%86%92-blue.svg)](https://hub.docker.com/r/suzel/docker-postgrest/)
+
 PostgREST serves a fully RESTful API from any existing PostgreSQL database.
 It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
 
@@ -39,40 +41,4 @@ You can the visit the following URL in a browser on your host machine to get sta
 
 ```
 http://127.0.0.1:3000/<database_table>
-```
-
-I want to run this with docker-compose, so I create the following file:
-
-```yml
-web:
-  image: suzel/docker-apache-php
-  ports:
-    - "80:80"
-  links:
-    - postgrest:postgrest
-  volumes:
-    - .:/var/www/html/
-
-postgrest:
-  image: suzel/docker-postgrest
-  ports:
-    - "3000:3000"
-  environment:
-    POSTGREST_VERSION: 0.3.0.2
-    POSTGREST_DBHOST: postgres
-    POSTGREST_DBPORT: 5432
-    POSTGREST_DBNAME: app_db
-    POSTGREST_DBUSER: app_user
-    POSTGREST_DBPASS: password
-  links:
-    - postgres:postgres
-
-postgres:
-  image: postgres
-  ports:
-    - "5432:5432"
-  environment:
-    POSTGRES_DB: app_db
-    POSTGRES_USER: app_user
-    POSTGRES_PASSWORD: password
 ```
