@@ -14,3 +14,5 @@ docker run --name postgrest-service \
              -e POSTGREST_DBUSER=user \
              -e POSTGREST_DBPASS=password \
              -d suzel/docker-postgrest
+
+open http://$(docker-machine ip default):3000
