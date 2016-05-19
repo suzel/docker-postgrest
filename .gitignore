@@ -1,9 +1,10 @@
-### OSX
-
-.DS_Store
+### Mac
 ._*
+.DS_Store
+.Spotlight-V100
+.Trashes
 
-### IDE
-
+### Intellij
 .idea/
 *.iml
+*.iws
