@@ -17,7 +17,7 @@ docker run --name postgres-db \
 docker run --name postgrest-service \
            --link postgres-db:postgres \
            -p 3000:3000 \
-           -e POSTGREST_VERSION=0.3.1.1 \
+           -e POSTGREST_VERSION=0.3.2.0 \
            -e POSTGREST_DBHOST=$(docker-machine ip default) \
            -e POSTGREST_DBPORT=5432 \
            -e POSTGREST_DBNAME=database1 \

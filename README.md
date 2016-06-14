@@ -28,7 +28,7 @@ Start your image binding external port 3000 in all interfaces to your container:
 ```sh
 $ docker run --name postgrest-service \
              -p 3000:3000 \
-             -e POSTGREST_VERSION=0.3.1.1 \
+             -e POSTGREST_VERSION=0.3.2.0 \
              -e POSTGREST_DBHOST=localhost \
              -e POSTGREST_DBPORT=5432 \
              -e POSTGREST_DBNAME=database1 \
