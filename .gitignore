@@ -4,7 +4,7 @@
 .Spotlight-V100
 .Trashes
 
-### Intellij
+### IntelliJ
 .idea/
 *.iml
 *.iws

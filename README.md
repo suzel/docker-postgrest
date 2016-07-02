@@ -38,11 +38,11 @@ $ docker run --name postgrest-service \
 ```
 
 You can the visit the following URL in a browser on your host machine to get started:
-
 ```
 open http://$(docker-machine ip default):3000/<database_table>
 ```
 
-## Documentation
+## Resources
 
+* [PostgREST Official Container](https://hub.docker.com/r/begriffs/postgrest)
 * [PostgREST Documentation](https://github.com/begriffs/postgrest)
