@@ -2,6 +2,8 @@
 
 [![Go to Docker Hub](https://img.shields.io/badge/Docker%20Hub-%E2%86%92-blue.svg)](https://hub.docker.com/r/suzel/docker-postgrest/)
 
+[![](https://images.microbadger.com/badges/image/suzel/docker-postgrest.svg)](https://microbadger.com/images/suzel/docker-postgrest "Get your own image badge on microbadger.com")
+
 PostgREST serves a fully RESTful API from any existing PostgreSQL database.
 It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
 
