@@ -1,10 +1,16 @@
-### Mac
+# OSX
 ._*
+.AppleDouble
 .DS_Store
+.LSOverride
 .Spotlight-V100
 .Trashes
 
-### IntelliJ
-.idea/
-*.iml
-*.iws
+# SublimeText
+*.sublime-workspace
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json

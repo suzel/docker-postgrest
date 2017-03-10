@@ -1,2 +1,5 @@
-docker-test.sh
+.git
+.gitignore
+.gitattributes
 README.md
+docker-build.sh
