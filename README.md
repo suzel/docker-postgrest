@@ -1,6 +1,10 @@
 # PostgREST Docker Image
 
-[![](https://img.shields.io/badge/Docker%20Hub-%E2%86%92-blue.svg)](https://hub.docker.com/r/suzel/docker-postgrest/ "Go to Docker Hub")
+[![Version](https://img.shields.io/badge/Version-0.4.4.0-blue.svg)](https://github.com/begriffs/postgrest/tree/build-0.4.4.0 "Version : 0.4.4.0")
+[![Build Status](https://travis-ci.org/suzel/docker-postgrest.svg?branch=master)](https://travis-ci.org/suzel/docker-postgrest "Travis CI")
+[![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg)](http://postgrest.com "Documentation")
+[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-%E2%86%92-blue.svg)](https://hub.docker.com/r/suzel/docker-postgrest/ "Go to Docker Hub")
+[![Docker Stars](https://img.shields.io/docker/pulls/suzel/docker-postgrest.svg)](https://hub.docker.com/r/suzel/docker-postgrest/ "Docker Pulls")
 
 PostgREST serves a fully RESTful API from any existing PostgreSQL database.
 It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
@@ -9,37 +13,59 @@ It provides a cleaner, more standards-compliant, faster API than you are likely 
 
 The easiest way to get this docker image installed is to pull the latest version from the Docker registry:
 
-```
-$ docker pull suzel/docker-postgrest
+```sh
+docker pull suzel/docker-postgrest
 ```
 
-Build the docker-postgrest:
+or build from source:
 
 ```sh
-$ git clone https://github.com/suzel/docker-postgrest.git
-$ cd docker-postgrest/
-$ docker build -t suzel/docker-postgrest .
+git clone https://github.com/suzel/docker-postgrest.git
+cd docker-postgrest/
+docker build -t suzel/docker-postgrest --build-arg POSTGREST_VERSION=0.4.4.0 .
 ```
 
 ## Usage
 
 Start your image binding external port 3000 in all interfaces to your container:
 
-*docker-compose.yml*
+docker-compose.yml
+
 ```yml
 version: '3.1'
 
 services:
+
+  # https://github.com/suzel/docker-postgrest
   postgrest:
-    image: suzel/docker-postgrest:latest
+    build:
+      context: .
+      args:
+        POSTGREST_VERSION: "0.4.4.0"
     ports:
       - "3000:3000"
     environment:
-      POSTGREST_VERSION: 0.4.0.0
+      PGRST_DB_URI: postgres://app_user:secret@postgres:5432/app_db
+      PGRST_DB_SCHEMA: public
+      PGRST_DB_ANON_ROLE: app_user
+    links:
+      - postgres:postgres
+
+  # https://github.com/sosedoff/pgweb
+  pgweb:
+    image: sosedoff/pgweb
+    ports:
+      - "8081:8081"
+    links:
+      - postgres:postgres
+    environment:
+      - DATABASE_URL=postgres://app_user:secret@postgres:5432/app_db?sslmode=disable
     depends_on:
       - postgres
+
+  # https://hub.docker.com/_/postgres/
   postgres:
-    image: postgres:latest
+    image: postgres:alpine
     ports:
       - "5432:5432"
     environment:
@@ -57,16 +83,19 @@ volumes:
 build and start:
 
 ```sh
-$ docker-compose up -d --build
+docker-compose up -d --build
 ```
 
 You can the visit the following URL in a browser on your host machine to get started:
-```
-open http://<docker_ip_address>:3000/<database_table>
+
+```sh
+# Open PostgREST Service
+http://localhost:3000/
+
+# Open database browser (pgweb)
+http://localhost:8081/
 ```
 
-## Resources
+## License
 
-* [PostgREST Project](http://postgrest.com)
-* [PostgREST Documentation](https://github.com/begriffs/postgrest)
-* [PostgREST Official Container](https://hub.docker.com/r/begriffs/postgrest)
+The source code is licensed under the [MIT license](LICENSE).

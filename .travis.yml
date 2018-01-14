@@ -1,0 +1,9 @@
+language: generic
+
+services:
+  - docker
+
+script:
+  - git clone https://github.com/suzel/docker-postgrest.git
+  - cd docker-postgrest/
+  - docker build -t suzel/docker-postgrest .
