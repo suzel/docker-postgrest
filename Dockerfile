@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 LABEL version="1.0" maintainer="Sukru Uzel <sukru.uzel@icloud.com>"
 
-ARG POSTGREST_VERSION
+ARG POSTGREST_VERSION=0.4.4.0
 
 # Install libpq5
 RUN apt-get -qq update && \
