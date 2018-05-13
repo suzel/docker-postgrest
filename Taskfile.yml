@@ -1,0 +1,15 @@
+version: '2'
+
+vars:
+  version: 0.4.4.0
+
+tasks:
+  build:
+    cmds:
+      - docker build -t suzel/docker-postgrest --build-arg POSTGREST_VERSION={{.version}} .
+  run:
+    cmds:
+      - docker-compose up -d --build
+  clean:
+    cmds:
+      - docker rmi suzel/docker-postgrest --force
