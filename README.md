@@ -1,6 +1,6 @@
 # PostgREST Docker Image
 
-[![Version](https://img.shields.io/badge/Version-0.5.0.0-blue.svg)](https://github.com/begriffs/postgrest/tree/master "Version : 0.5.0.0")
+[![Version](https://img.shields.io/badge/Version-0.5.0.0-blue.svg)](https://github.com/begriffs/postgrest/tree/master "Version : 0.5.1.0")
 [![Build Status](https://travis-ci.org/suzel/docker-postgrest.svg?branch=master)](https://travis-ci.org/suzel/docker-postgrest "Travis CI")
 [![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg)](http://postgrest.com "Documentation")
 [![Docker Hub](https://img.shields.io/badge/Docker%20Hub-%E2%86%92-blue.svg)](https://hub.docker.com/r/suzel/docker-postgrest/ "Go to Docker Hub")
@@ -22,7 +22,7 @@ or build from source:
 ```sh
 git clone https://github.com/suzel/docker-postgrest.git
 cd docker-postgrest/
-docker build -t suzel/docker-postgrest --build-arg POSTGREST_VERSION=0.5.0.0 .
+docker build -t suzel/docker-postgrest --build-arg POSTGREST_VERSION=0.5.1.0 .
 ```
 
 ## Usage
@@ -41,7 +41,7 @@ services:
     build:
       context: .
       args:
-        POSTGREST_VERSION: "0.5.0.0"
+        POSTGREST_VERSION: "0.5.1.0"
     ports:
       - "3000:3000"
     environment:
