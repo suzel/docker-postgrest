@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 LABEL version="1.0" maintainer="Sukru Uzel <sukru.uzel@icloud.com>"
 
-ARG POSTGREST_VERSION=0.5.1.0
+ARG POSTGREST_VERSION=5.2.0
 
 # Install libpq5
 RUN apt-get -qq update && \
@@ -14,7 +14,7 @@ RUN BUILD_DEPS="curl ca-certificates xz-utils" && \
   apt-get -qq update && \
   apt-get -qq install -y --no-install-recommends $BUILD_DEPS && \
   cd /tmp && \
-  curl -SLO https://github.com/begriffs/postgrest/releases/download/v${POSTGREST_VERSION}/postgrest-v${POSTGREST_VERSION}-ubuntu.tar.xz && \
+  curl -SLO https://github.com/PostgREST/postgrest/releases/download/v${POSTGREST_VERSION}/postgrest-v${POSTGREST_VERSION}-ubuntu.tar.xz && \
   tar -xJvf postgrest-v${POSTGREST_VERSION}-ubuntu.tar.xz && \
   mv postgrest /usr/local/bin/postgrest && \
   cd / && \
