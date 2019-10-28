@@ -1,4 +1,4 @@
-# OSX
+# Mac
 ._*
 .AppleDouble
 .DS_Store
@@ -6,11 +6,9 @@
 .Spotlight-V100
 .Trashes
 
-# SublimeText
-*.sublime-workspace
-
 # VSCode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
+!.vscode/extensions.json

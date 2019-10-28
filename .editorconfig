@@ -1,14 +1,23 @@
-# editorconfig.org
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# http://editorconfig.org
 
 root = true
 
 [*]
+# Change these settings to your own preference
+indent_style = space
+indent_size = 2
+
+# We recommend you to keep these unchanged
 charset = utf-8
 end_of_line = lf
-indent_size = 2
-indent_style = space
-insert_final_newline = true
+insert_final_newline = false
 trim_trailing_whitespace = true
+
+[{Makefile,**.mk}]
+# Use tabs for indentation (Makefiles require tabs)
+indent_style = tab
 
 [*.md]
 trim_trailing_whitespace = false
