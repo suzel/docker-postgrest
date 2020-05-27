@@ -1,9 +1,8 @@
 # PostgREST Docker Image
 
-[![Version](https://img.shields.io/badge/Version-7.0.1-blue.svg?style=flat-square)](https://github.com/begriffs/postgrest/tree/master "Version : 7.0.1")
+[![Version](https://img.shields.io/badge/version-7.0.1-blue.svg?style=flat-square)](https://github.com/begriffs/postgrest/tree/master "Version : 7.0.1")
 [![Build Status](https://img.shields.io/travis/suzel/docker-postgrest/master?style=flat-square)](https://travis-ci.org/suzel/docker-postgrest "Travis CI")
 [![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg?style=flat-square)](http://postgrest.com "Documentation")
-[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-%E2%86%92-blue.svg?style=flat-square)](https://hub.docker.com/r/suzel/docker-postgrest/ "Go to Docker Hub")
 [![Docker Stars](https://img.shields.io/docker/pulls/suzel/docker-postgrest.svg?style=flat-square)](https://hub.docker.com/r/suzel/docker-postgrest/ "Docker Pulls")
 
 PostgREST serves a fully RESTful API from any existing PostgreSQL database.
