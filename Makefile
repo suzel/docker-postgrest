@@ -1,4 +1,4 @@
-VERSION = 6.0.2
+VERSION = 7.0.1
 NS = suzel
 IMAGE_NAME = docker-postgrest
 

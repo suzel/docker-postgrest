@@ -1,10 +1,11 @@
 # PostgREST Docker Image
 
-[![Version](https://img.shields.io/badge/Version-6.0.2-blue.svg)](https://github.com/begriffs/postgrest/tree/master "Version : 6.0.2")
-[![Build Status](https://travis-ci.org/suzel/docker-postgrest.svg?branch=master)](https://travis-ci.org/suzel/docker-postgrest "Travis CI")
-[![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg)](http://postgrest.com "Documentation")
-[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-%E2%86%92-blue.svg)](https://hub.docker.com/r/suzel/docker-postgrest/ "Go to Docker Hub")
-[![Docker Stars](https://img.shields.io/docker/pulls/suzel/docker-postgrest.svg)](https://hub.docker.com/r/suzel/docker-postgrest/ "Docker Pulls")
+[![Version](https://img.shields.io/badge/Version-7.0.1-blue.svg?style=flat-square)](https://github.com/begriffs/postgrest/tree/master "Version : 7.0.1")
+[![Build Status](https://img.shields.io/travis/suzel/docker-postgrest/master?style=flat-square)](https://travis-ci.org/suzel/docker-postgrest "Travis CI")
+[![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg?style=flat-square)](http://postgrest.com "Documentation")
+[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-%E2%86%92-blue.svg?style=flat-square)](https://hub.docker.com/r/suzel/docker-postgrest/ "Go to Docker Hub")
+[![Docker Stars](https://img.shields.io/docker/pulls/suzel/docker-postgrest.svg?style=flat-square)](https://hub.docker.com/r/suzel/docker-postgrest/ "Docker Pulls")
+[![Build Status](https://img.shields.io/travis/vineetchoudhary/AppBox-iOSAppsWirelessInstallation/master?style=flat-square)](https://travis-ci.org/vineetchoudhary/AppBox-iOSAppsWirelessInstallation)
 
 PostgREST serves a fully RESTful API from any existing PostgreSQL database.
 It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
@@ -22,7 +23,7 @@ or build from source:
 ```sh
 git clone https://github.com/suzel/docker-postgrest.git
 cd docker-postgrest/
-docker build -t suzel/docker-postgrest --build-arg POSTGREST_VERSION=6.0.2 .
+docker build -t suzel/docker-postgrest --build-arg POSTGREST_VERSION=7.0.1 .
 ```
 
 ## Usage
@@ -32,16 +33,15 @@ Start your image binding external port 3000 in all interfaces to your container:
 docker-compose.yml
 
 ```yml
-version: '3.1'
+version: "3.1"
 
 services:
-
   # https://github.com/suzel/docker-postgrest
   postgrest:
     build:
       context: .
       args:
-        POSTGREST_VERSION: "6.0.2"
+        POSTGREST_VERSION: "7.0.1"
     ports:
       - "3000:3000"
     environment:
